@@ -1,0 +1,5 @@
+(executable 
+ (public_name pcre-demo) 
+ (name pcre_demo)
+ (promote (until-clean))
+ (libraries pcre2)) 
