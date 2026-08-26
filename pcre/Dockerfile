@@ -22,7 +22,7 @@ COPY dune dune-project pcre-demo.opam pcre_demo.ml ./
 
 RUN opam install . --deps-only --yes
 
-RUN opam exec -- dune build
+RUN opam exec -- dune build --release
 
 FROM base AS runtime
 

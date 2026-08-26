@@ -3,3 +3,11 @@
  (name pcre_demo)
  (promote (until-clean))
  (libraries pcre2)) 
+
+(env
+ (release
+  (ocamlopt_flags (:standard))
+  (link_flags (:standard -cclib -static
+                -cclib -lpcre2-8
+                -cclib -pthread
+                -cclib -lpthread))))
