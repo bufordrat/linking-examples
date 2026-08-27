@@ -1,0 +1,12 @@
+(executable 
+ (public_name readline-demo) 
+ (name readline_demo)
+ (promote (until-clean))
+ (libraries readline)) 
+
+(env
+ (release
+  (ocamlopt_flags (:standard))
+  (link_flags (:standard -cclib -static
+                -cclib -lreadline
+                -cclib -lncursesw))))

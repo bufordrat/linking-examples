@@ -1,0 +1,9 @@
+(lang dune 3.13)
+(name readline-demo)
+(generate_opam_files true)
+(package
+ (name readline-demo)
+  (depends
+  (ocaml (>= 4.14.0))
+   dune
+   readline))

@@ -1,4 +1,5 @@
 let () =
-  match Readline.readline "Enter something: " with
+  Readline.init () ;
+  match Readline.readline ~prompt:"Type a string: " () with
   | None -> ()
   | Some line -> print_endline ("You said: " ^ line)

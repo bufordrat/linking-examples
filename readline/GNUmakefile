@@ -1,5 +1,5 @@
-PNAME = pcre_demo
-BNAME = pcre-demo
+PNAME = readline_demo
+BNAME = readline-demo
 
 all:
 	docker build --progress=plain -t $(PNAME) .
