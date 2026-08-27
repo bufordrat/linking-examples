@@ -1,0 +1,10 @@
+(executable 
+ (public_name pure-ocaml-demo) 
+ (name pure_ocaml_demo)
+ (promote (until-clean))) 
+
+(env
+ (release
+  (ocamlopt_flags (:standard))
+  (link_flags (:standard -cclib -static))))
+

@@ -1,5 +1,5 @@
-PNAME = pcre_demo
-BNAME = pcre-demo
+PNAME = pure_ocaml_demo
+BNAME = pure-ocaml-demo
 
 dune-stuff:
 	dune build --display short || true

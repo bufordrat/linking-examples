@@ -1,0 +1,8 @@
+(lang dune 3.13)
+(name pure-ocaml-demo)
+(generate_opam_files true)
+(package
+ (name pure-ocaml-demo)
+  (depends
+  (ocaml (>= 4.14.0))
+   dune))
