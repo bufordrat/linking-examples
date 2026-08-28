@@ -1,6 +1,4 @@
-FROM alpine:3.20 AS base
-
-FROM base AS builder
+FROM alpine:3.20 AS builder
 
 RUN apk update && \
     apk upgrade && \
@@ -14,7 +12,7 @@ USER ocamldev
 RUN opam init --bare -a -y --disable-sandboxing \
     && opam update
 
-RUN opam switch create static-5.2.0 ocaml-variants.5.2.0+options ocaml-option-static
+RUN opam switch create docker-switch 5.2.0
 
 WORKDIR /app
 
@@ -24,7 +22,7 @@ RUN opam install . --deps-only --yes
 
 RUN opam exec -- dune build --release
 
-FROM base AS runtime
+FROM alpine:3.20 AS runtime
 
 COPY --from=builder /app/readline_demo.exe /usr/local/bin/readline-demo
 
