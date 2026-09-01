@@ -1,12 +1,11 @@
-PNAME = pcre_demo
-BNAME = pcre-demo
+PNAME = pcre-demo
 
 all: dune-stuff
 	docker build --progress=plain -t $(PNAME) .
-	docker create --name $(BNAME)-extract $(PNAME)
-	docker cp $(BNAME)-extract:/usr/local/bin/$(BNAME) ./musl/$(BNAME)
-	docker rm $(BNAME)-extract
-.PHONY: musl-build-exe
+	docker create --name $(PNAME)-extract $(PNAME)
+	docker cp $(PNAME)-extract:/usr/local/bin/$(PNAME) ./musl/$(PNAME)
+	docker rm $(PNAME)-extract
+.PHONY: all
 
 dune-stuff:
 	dune build --display short || true
@@ -15,5 +14,5 @@ dune-stuff:
 
 clean:
 	docker rmi $(PNAME) 2> /dev/null || true
-	rm musl/$(BNAME) || true
+	rm musl/$(PNAME) || true
 .PHONY: clean
