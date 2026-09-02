@@ -4,6 +4,6 @@
 (package
  (name pcre-demo)
   (depends
-  (ocaml (>= 4.14.0))
-   dune
-   pcre2))
+    ocaml 
+    dune
+    pcre2))
