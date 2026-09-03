@@ -2,7 +2,7 @@ FROM alpine:3.20 AS builder
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache build-base opam pcre2-dev pkgconf
+    apk add --no-cache build-base opam pcre2-dev
 
 RUN addgroup ocamldev && adduser -G ocamldev -D ocamldev
 
